@@ -10,13 +10,7 @@ def to_word(words):
     line_words = []
     for word in words:
         if word:
-            for i in range(len(word)):
-                if word[-1] in string.punctuation:
-                    word = word[:-1]  
-                elif word[0] in string.punctuation:
-                    word = word[1:]      
-                else:
-                    break
+            word = word.strip(string.punctuation)
             if word:
                 line_words.append(word)
     return line_words
